@@ -45,6 +45,6 @@ Key Components:
 
 ## Authors
 
-- **Author Name**: [Author GitHub Profile](https://github.com/bajkacper)
+- **Author Name**: [Kacper Baj](https://github.com/bajkacper)
   
 
