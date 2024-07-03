@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane prefHeight="800.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx.AdminController">
+    <tabs>
+        <Tab text="Pytania">
+            <content>
+                <VBox alignment="CENTER" spacing="10">
+                    <Button onAction="#logout" prefHeight="30.0" prefWidth="112.0" style="-fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-color: #e74c3c; -fx-text-fill: white;" text="Wyloguj się" />
+                    <HBox spacing="10">
+                       <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Zarządzanie pytaniami" />
+                        <Button onAction="#showQuestions" style="-fx-font-size: 12;" text="Pokaż pytania" />
+                        <Button onAction="#addQuestion" style="-fx-font-size: 12;" text="Dodaj pytanie" />
+                        <Button onAction="#updateQuestion" style="-fx-font-size: 12;" text="Aktualizuj pytanie" />
+                        <Button onAction="#deleteQuestion" prefHeight="18.0" prefWidth="122.0" style="-fx-font-size: 12;" text="Usuń pytanie">
+                     <font>
+                        <Font size="5.0" />
+                     </font></Button>
+                    </HBox>
+                    <ListView fx:id="questionListView" prefHeight="248.0" prefWidth="1000.0" />
+                    <Label fx:id="questionMessageLabel" style="-fx-text-fill: #003bfc;" />
+                    <TextArea fx:id="questionTextArea" prefHeight="202.0" prefWidth="1000.0" promptText="Wprowadź pytanie tutaj..." style="-fx-font-size: 14px;" />
+
+                    <Label style="-fx-font-size: 14px;" text="Zdjęcie pytania:" />
+                    <HBox prefHeight="26.0" prefWidth="950.0" spacing="10">
+                        <Button onAction="#selectImage" style="-fx-font-size: 12;" text="Wybierz zdjęcie" />
+                        <Button onAction="#deleteImage" style="-fx-font-size: 12;" text="Usuń zdjęcie" />
+                       <ImageView fx:id="questionImageView" fitHeight="126.0" fitWidth="604.0" preserveRatio="true" />
+                    </HBox>
+                    <VBox fx:id="answersBox" spacing="5">
+                        <HBox spacing="10">
+                          <Label style="-fx-font-size: 12;" text="Dodaj odpowiedzi:" />
+                            <TextField fx:id="answerTextField" prefHeight="30.0" prefWidth="389.0" promptText="Wprowadź odpowiedź tutaj..." style="-fx-font-size: 14px;" />
+                            <CheckBox fx:id="isCorrectCheckBox" style="-fx-font-size: 14px;" text="Poprawna" />
+                            <Button onAction="#addAnswer" style="-fx-font-size: 12;" text="Dodaj odpowiedź" />
+                            <Button onAction="#deleteAnswer" style="-fx-font-size: 12;" text="Usuń odpowiedź" />
+                        </HBox>
+                    </VBox>
+                    <ListView fx:id="answerListView" prefHeight="279.0" prefWidth="1000.0" />
+                </VBox>
+            </content>
+        </Tab>
+        <Tab text="Użytkownicy">
+            <content>
+                <VBox alignment="CENTER" spacing="10">
+                    <Button onAction="#logout" style="-fx-font-size: 14px; -fx-padding: 10px 20px;-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Wyloguj się" />
+                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Lista użytkowników" />
+                    <TableView fx:id="userTableView" prefHeight="590.0" prefWidth="1000.0">
+                        <columns>
+                            <TableColumn fx:id="indexColumn" prefWidth="100" text="Index" />
+                            <TableColumn fx:id="nameColumn" prefWidth="200" text="Imię" />
+                            <TableColumn fx:id="lastNameColumn" prefWidth="200" text="Nazwisko" />
+                            <TableColumn fx:id="adminColumn" prefWidth="100" text="Admin" />
+                            <TableColumn fx:id="idColumn" prefWidth="200" text="ID" />
+                        </columns>
+                    </TableView>
+                    <Label fx:id="userMessageLabel" style="-fx-text-fill: #003bfc;" />
+                </VBox>
+            </content>
+        </Tab>
+        <Tab text="Testy">
+            <content>
+                <VBox alignment="CENTER" spacing="10">
+                    <Button onAction="#logout" style="-fx-font-size: 14px; -fx-padding: 10px 20px;-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Wyloguj się" />
+                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Lista testów" />
+                    <TableView fx:id="testTableView" prefHeight="564.0" prefWidth="1000.0">
+                        <columns>
+                            <TableColumn fx:id="testIdColumn" prefWidth="50" text="ID" />
+                            <TableColumn fx:id="testMaxScoreColumn" prefWidth="150" text="Max l.punktów" />
+                            <TableColumn fx:id="testScoreColumn" prefWidth="150" text="Wynik" />
+                            <TableColumn fx:id="testShotColumn" prefWidth="100" text="Shot" />
+                            <TableColumn fx:id="testStudentIndexColumn" prefWidth="150" text="Indeks" />
+                            <TableColumn fx:id="gradeColumn" prefWidth="100" text="Ocena" />
+                            <TableColumn fx:id="dataColumn" prefWidth="100" text="Data" />
+                        </columns>
+                    </TableView>
+                    <Label fx:id="testMessageLabel" style="-fx-text-fill: #003bfc;" />
+                </VBox>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

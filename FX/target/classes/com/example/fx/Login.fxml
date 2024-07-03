@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TabPane prefHeight="500.0" prefWidth="604.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx.LoginController">
+    <tabs>
+        <Tab text="Logowanie">
+            <content>
+                <GridPane alignment="CENTER" hgap="10" prefHeight="330.0" prefWidth="469.0" vgap="10">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10"/>
+                    </padding>
+                    <Label text="Index:"/>
+                    <TextField fx:id="indexField" promptText="Index" GridPane.columnIndex="1"/>
+                    <Label text="Password:" GridPane.rowIndex="1"/>
+                    <PasswordField fx:id="passwordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Button onAction="#handleLogin" text="Zaloguj" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Label fx:id="loginMessageLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="Rejestracja">
+            <content>
+                <GridPane alignment="CENTER" hgap="10" vgap="10">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10"/>
+                    </padding>
+                    <Label text="Index:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="registerIndexField" promptText="Index" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="Imię:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="registerNameField" promptText="Imię" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="Nazwisko:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <TextField fx:id="registerLastNameField" promptText="Nazwisko" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Label text="Hasło:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <PasswordField fx:id="registerPasswordField" promptText="Hasło" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    <Button onAction="#handleRegister" text="Zarejestruj" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    <Label fx:id="registerMessageLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
